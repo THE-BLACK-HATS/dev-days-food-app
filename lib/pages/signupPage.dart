@@ -9,9 +9,9 @@ class _SignupPageState extends State<SignupPage> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-        resizeToAvoidBottomPadding: false,
-        body: Column(crossAxisAlignment: CrossAxisAlignment.start, children: <
-            Widget>[
+        body: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
           Container(
             child: Stack(
               children: <Widget>[
@@ -20,7 +20,7 @@ class _SignupPageState extends State<SignupPage> {
                   child: Text(
                     'Signup',
                     style:
-                    TextStyle(fontSize: 80.0, fontWeight: FontWeight.bold),
+                        TextStyle(fontSize: 80.0, fontWeight: FontWeight.bold),
                   ),
                 ),
                 Container(
@@ -112,16 +112,12 @@ class _SignupPageState extends State<SignupPage> {
                         onTap: () {
                           Navigator.of(context).pop();
                         },
-                        child:
-
-                        Center(
+                        child: Center(
                           child: Text('Go Back',
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontFamily: 'Montserrat')),
                         ),
-
-
                       ),
                     ),
                   ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_app/pages/hotelDetails.dart';
+import 'package:food_app/pages/signupPage.dart';
 
 void main() {
   runApp(MyApp());
@@ -23,7 +24,8 @@ class MyApp extends StatelessWidget {
          ThemeMode.light for light theme, 
          ThemeMode.dark for dark theme
       */
-      home: MyHomePage(title: 'Food App'),
+      // home: MyHomePage(title: 'Food App'),
+      home: SignupPage(),
     );
   }
 }

@@ -54,6 +54,11 @@ class _HotelState extends State<Hotel> {
                   ),
                 ),
               ],
+            ),
+            Card(
+              child: Container(
+                padding: EdgeInsets.all(12),
+              ),
             )
           ],
         ));
