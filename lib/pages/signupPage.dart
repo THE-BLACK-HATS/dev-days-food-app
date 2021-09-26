@@ -31,7 +31,7 @@ class _SignupPageState extends State<SignupPage> {
                     style: TextStyle(
                         fontSize: 80.0,
                         fontWeight: FontWeight.bold,
-                        color: Colors.green),
+                        color: Colors.blue),
                   ),
                 )
               ],
@@ -81,8 +81,8 @@ class _SignupPageState extends State<SignupPage> {
                   height: 40.0,
                   child: Material(
                     borderRadius: BorderRadius.circular(20.0),
-                    shadowColor: Colors.greenAccent,
-                    color: Colors.green,
+                    shadowColor: Colors.blueAccent,
+                    color: Colors.blue,
                     elevation: 7.0,
                     child: InkWell(
                       onTap: () {
