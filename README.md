@@ -1,16 +1,13 @@
-# food_app
+# Flutter-food_app
 
-A new Flutter project.
+A flutter project to attract the tourists and promote tourism in a new way by introducing the local hotels and restaurants to the tourists based on their location. The user can then go to the neaby hotel click a selfie and the app shall award them a sticker. This way they can maintain their "tastes diary" and explore the city. The app shall also work like a guide mapping out all the hotels with their history and lineage.
+*Currently the app is in development*
 
-## Getting Started
+## Upcoming features
+- Integrating selfie feature.
+- Enabling location services to verify the actual destination of the user, finding nearby hotels,
+- and also provide them with the city map containing information about the hotels, and other exciting places that the tourist may pass by.
+- adding a "Tastes Diary" to record the visited destinations and all the experiences.
 
-This project is a starting point for a Flutter application.
+## Gallery
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
