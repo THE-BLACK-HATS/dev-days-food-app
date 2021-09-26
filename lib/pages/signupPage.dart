@@ -86,7 +86,7 @@ class _SignupPageState extends State<SignupPage> {
                     elevation: 7.0,
                     child: InkWell(
                       onTap: () {
-                        Navigator.push(
+                        Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
                             builder: (context) => MyHomePage(

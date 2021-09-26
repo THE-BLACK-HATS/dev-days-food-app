@@ -12,45 +12,57 @@ class _HotelState extends State<Hotel> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(183),
+        child: AppBar(
+          title: Text(widget.title),
+          flexibleSpace: Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: Image.network(
+                  "https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80",
+                  fit: BoxFit.cover,
+                  width: double.infinity,
+                ).image,
+              ),
+            ),
+          ),
+        ),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Image.network(
-            "https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80",
-            width: double.infinity,
-            fit: BoxFit.cover,
-          ),
           SizedBox(
             height: 24.0,
             width: double.infinity,
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                '( Open/Close time )',
-                style: TextStyle(
-                  fontFamily: "Roboto",
-                  fontWeight: FontWeight.bold,
-                  fontSize: Theme.of(context).textTheme.bodyText1?.fontSize,
-                  color: Theme.of(context).colorScheme.onSurface,
-                  // clearly legible color according to the background
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  '( Open/Close time )',
+                  style: TextStyle(
+                    fontFamily: "Roboto",
+                    fontWeight: FontWeight.bold,
+                    fontSize: Theme.of(context).textTheme.bodyText1?.fontSize,
+                    color: Theme.of(context).colorScheme.onSurface,
+                    // clearly legible color according to the background
+                  ),
                 ),
-              ),
-              Text(
-                '( Visited sticker )',
-                style: TextStyle(
-                  fontFamily: "Roboto",
-                  fontWeight: FontWeight.bold,
-                  fontSize: Theme.of(context).textTheme.bodyText1?.fontSize,
-                  color: Theme.of(context).colorScheme.onSurface,
-                  // clearly legible color according to the background
+                Text(
+                  '( Visited sticker )',
+                  style: TextStyle(
+                    fontFamily: "Roboto",
+                    fontWeight: FontWeight.bold,
+                    fontSize: Theme.of(context).textTheme.bodyText1?.fontSize,
+                    color: Theme.of(context).colorScheme.onSurface,
+                    // clearly legible color according to the background
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
           SizedBox(
             width: double.infinity,
@@ -90,6 +102,7 @@ class _HotelState extends State<Hotel> {
             height: 48.0,
           ),
           Card(
+            elevation: 0,
             child: Column(
               children: [
                 Text(
@@ -101,10 +114,46 @@ class _HotelState extends State<Hotel> {
                     fontSize: Theme.of(context).textTheme.headline5?.fontSize,
                   ),
                 ),
-                Container(),
               ],
             ),
-          )
+          ),
+          Expanded(
+            child: ListView(
+              physics: BouncingScrollPhysics(
+                  parent: AlwaysScrollableScrollPhysics()),
+              children: [
+                ListTile(
+                  tileColor: Colors.white,
+                  leading: Icon(Icons.person),
+                  title: Text("User's name"),
+                  subtitle: Text("User's comment"),
+                  trailing: PopupMenuButton(
+                    // onSelected: (){
+                    // handle what happens after clicking menu items
+                    // },
+                    itemBuilder: (BuildContext context) {
+                      return {'Report'}
+                          .map(
+                            (String text) => PopupMenuItem(
+                              value: text,
+                              child: Row(
+                                children: [
+                                  Icon(Icons.flag_outlined),
+                                  SizedBox(
+                                    width: 4,
+                                  ),
+                                  Text(text),
+                                ],
+                              ),
+                            ),
+                          )
+                          .toList();
+                    },
+                  ),
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
